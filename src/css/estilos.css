@@ -1,0 +1,254 @@
+html {
+    color: #fff;
+    scroll-behavior: smooth;
+    /*acima, o "scroll-behavior" ajuda a rolagem da página ser mais suave*/
+}
+
+body {
+    background-color: #282828;
+    font-family: "Oswald", sans-serif;
+    margin: 0 auto;
+    max-width: 1120px;
+    background: linear-gradient(to right bottom, #282626 30%, #95ec43 70%,#ff91f0 80%);
+    /*Propriedade abreviada para definir a maioria das propriedades de plano de fundo no mesmo lugar na folha de estilo*/
+    background-size: 120% 120%;
+}
+
+.cabecalho {
+    /*background-color: blue;*/
+    /*acima, os background-color adicionados em cada seletor serviram para que o dev soubesse de forma mais clara (visível) onde estava atuando na página. Uma vez finalizado a estilização, basta apagar os background-color que não convém para o projeto. Neste caso não apaguei, mas comentei para lembrar dessa prática*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/*abaixo, o espaço entre as class "cabecalho" e "logo" indica q queremos pegar todos os "logo"s dentro da class "cabecalho". E pq não só colocar ".logo"? Pq qto mais específico, menor são as chances de erro*/
+.cabecalho .logo {
+    /*background-color: orange;*/
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    text-decoration: underline;
+    text-align: center;
+    line-height: 55px;
+    font-family: "Oswald", sans-serif;
+    transition: 0.2s;
+}
+
+/*abaixo, "hover" é uma subclasse que altera a aparência do elemento ao passar o cursor do mouse sobre e deve ser codada dessa forma: class tag onde esta o elemento que se deseja aplicar o estilo:"hover "."o elemento em si*/
+.cabecalho a:hover .logo {
+    color: #ffbdf6;
+    border: 2px solid #ffbdf6;
+}
+
+/*.cabecalho .menu ul{
+    background-color: red;
+}*/
+
+.cabecalho .menu li a {
+    font-size: 20px;
+    text-transform: capitalize;
+    /*valor "capitalize" serve para colocar em cx alta as iniciais das palavras*/
+    padding: 10px 20px;
+    transition: 0.2s;
+}
+
+.cabecalho .menu li a:hover {
+    background-color: #ffbdf6;
+    /*este background-color não foi apagado ou comentado porque a cor já é a própria do projeto*/
+    color: #fff;
+    border-radius: 50px;
+}
+
+.home { 
+    /*background-color: green;*/
+    display: flex;
+    min-height: calc(100vh - 125px);
+    /*acima, o que é o vh? "viewport hight* ou altura da janela, ou porta e 100 é de 100%. Mas é preciso descontar a altura ddo cabeçalho de 125px. Então usa-se a função "calc()" lembrando se colocar espaço entre os valores e sinais utilizados*/
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.home .informacoes {
+    /*background-color: black;*/
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 2px;
+    padding: 0 15px;
+    max-width: 50%;
+    /*acima, usar % ao invés de px é bom para sites responsivos q se ajustam de acordo com a tela*/
+}
+
+.home .informacoes h1 {
+    font-family: "Share Tech", sans-serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.home .informacoes p {
+    font-family: "Share Tech", sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.home .redes-sociais {
+    /*background-color: orange;*/
+    display: flex;
+    gap: 20px;
+}
+
+.home .redes-sociais a i {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    font-size: 26px;
+    transition: 0.3s;
+}
+
+.home .redes-sociais a i:hover {
+    color: #ffbdf6;
+    border: 1px solid #ffbdf6;
+    transform: scale(1.1);
+    /*acima, nova função "scale()" que ajusta o elemento em escala, neste caso, pede que aumente em 10% ou x 1,1 */
+}
+
+.home .container-foto .foto {
+    /*background-color: red;*/
+    max-width: 450px;
+    border-radius: 50%;
+}
+
+.home .container-foto img {
+    width: 100%;
+    border-radius: 50%;
+    /* acima, o "linear-gradient" é uma função para misturar diferentes cores. Pode ser usado de sites que simulam essas misturas e dão o código correto*/
+}
+
+.home .foto.sombra-interna {
+    background: linear-gradient(to right bottom, #000, #a5669d, #95ec43);
+    /*acima, no HTML a classe citada está como "foto sombra-interna", com espaço. Mas para o CSS é preciso colocar um "." entre as classes para funcionar. Se usar espaço (.foto .sombra-interna) o CSS vai entender que ".sombra-interna é filha da ".foto"*/
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+    /*"gradient-animation" seria a class q foi criada no final do código no "keyframes"*/
+}
+
+
+.projetos {
+    /*background-color: purple;*/
+    padding: 70px 0;
+}
+
+.projetos .titulo {
+    font-family: "Share Tech", sans-serif;
+    text-align: center;
+    padding: 60px 0;
+    font-size: 45px;
+    font-weight: 500;
+    /*acima, "font-weight" seria o "peso" da fonte, ou o quão negritado fica a fonte. Não tem unidade*/
+    text-transform: uppercase;
+}
+
+.projetos .container-projetos {
+    /*background-color: yellow;*/
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    /*acima, "flex-wrap" serve para o CCS quebrar os elementos para baixo encaixando lado a lado enquanto tiver espaço disponível*/
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.projetos .projeto {
+    max-width: 260px;
+    max-height: 500px;
+    position: relative;
+    display: none;
+}
+
+.projetos .projeto.ativo {
+    display: block;
+}
+
+.projetos .projeto img {
+    height: 100%;
+}
+
+.projetos .projeto h3 {
+    font-family: "Share Tech", sans-serif;
+    background-color: #040203;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: absolute;
+    /*"position" especifica a posição do elemento com relação ao seu ancestral com posição diferente de "estático" q é o valor padrão dos navegadores. Se a class pai não teve sua posição definida, ou seja, esteja como padrão "estático", o elemento será posicionado de acordo com a página total*/
+    bottom: 0;
+    /*acima: "bottom" especifica como será posicionado o elemento "h3" com relação ao bloco q a contém caso esse bloco tenha position diferente de estático (padrão). Vendo no projeto é possível notar q o "h3" ficou sobre a imagem do projeto alinhada pelas margens inferiores. E foi alinhado com a img do projeto pq o position de ".projeto" foi definido mais acima como "relative"*/
+}
+
+.projetos .projeto .informacoes-projeto {
+    background-color: #040203;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/*abaixo, qdo eu passar o mouse sobre a div do "projeto" vou acionar o a função "hover" sobre o seletor de "informacoes-projeto*/
+.projetos .container-projetos .projeto:hover .informacoes-projeto {
+    opacity: 0.7;
+    /*acima, no seletor anterior escondemos ele com opacidade 0, então para aplicar o "hover" podemos adicionar alguma opacidade para aparecer parcialmente*/
+    background-color: #000;
+}
+
+.projetos .btn-mostrar-projetos {
+    font-family: "Share Tech", sans-serif;
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    width: 180px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.projetos .btn-mostrar-projetos:hover {
+    background-color: #ffbdf6;
+    transition: 0.3s;
+}
+
+.projetos .btn-mostrar-projetos.remover {
+    display: none;
+}
+
+/*abaixo, função que permite dar movimento a um elemento selecionado. Para isso é preciso voltar à classe q contém esse elemento e adicionar a propriedade "animation", neste caso "sombra-interna*/
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

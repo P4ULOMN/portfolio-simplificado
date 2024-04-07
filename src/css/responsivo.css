@@ -1,0 +1,47 @@
+/*responsivo para telas pequenas, de notes pequenos poe ex*/
+@media(max-width: 1280px) {
+    
+    .cabecalho {
+        padding: 30px;
+
+    }
+    
+    .home {
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0;
+        gap: 30px;
+    }
+
+    .home .informacoes {
+        max-width: 100%;
+        /*acima, ocupar 100% da tela do celular por ex*/
+        text-align: center;
+        align-items: center;
+        /*text-align só alinha os textos, com align-items alinha os itens tb*/
+    }
+
+    .projetos .container-projetos {
+        padding: 0 30px;
+
+    }
+}/*media query de 1280px*/
+
+@media(max-width: 425px) {
+    .home .informacoes h1{
+        font-size: 30px;
+    }
+
+    .home .informacoes p{
+        font-size: 16px;
+    }
+
+    .home .container-foto img {
+        max-width: 320px;
+    }
+
+    .projetos {
+        padding: 30px;
+    }
+}
+
